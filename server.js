@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/articles', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://yernur:ABH20OI0Jbk7XEbE@clusterzero.t76awpn.mongodb.net/sample_mflix', {useNewUrlParser: true, useUnifiedTopology: true});
 
 // Define schema of article
 const ArticleSchema = new mongoose.Schema({
