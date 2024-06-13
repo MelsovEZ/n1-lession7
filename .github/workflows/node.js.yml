@@ -30,5 +30,16 @@ jobs:
 
     - run: npm install
 
-    - name: Run server
-      run: node server.js
+    - name: Start server
+      run: node server.js &
+      shell: bash
+
+    - name: Wait for server to start
+      run: sleep 10
+
+    - name: Health check
+      run: curl --fail http://localhost:3000
+
+    - name: Stop server
+      run: kill $(jobs -p)
+      shell: bash
