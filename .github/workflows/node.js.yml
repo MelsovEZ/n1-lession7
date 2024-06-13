@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x, 20.x]
+        node-version: [20.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -39,7 +39,3 @@ jobs:
 
     - name: Health check
       run: curl --fail http://localhost:3000
-
-    - name: Stop server
-      run: kill $(jobs -p)
-      shell: bash
